@@ -69,7 +69,35 @@ namespace StockManagement
                 }
             }
         }
-
+        public void SellStock(string name)
+        {
+            foreach (var data in customer)
+            {
+                if (data.stockName.Equals(name))
+                {
+                    Console.WriteLine("Enter the number of Stocks to Sell");
+                    int sellStock = int.Parse(Console.ReadLine());
+                    if (sellStock <= data.totalShare)
+                    {
+                        StockReport stock = new StockReport();
+                        {
+                            stock.stockName = data.stockName;
+                            stock.stockPrice = data.stockPrice;
+                            stock.totalShare = data.totalShare;
+                        }
+                        data.totalShare -= sellStock;
+                        amount += data.stockPrice * sellStock;
+                        foreach (var account in report)
+                        {
+                            if (account.stockName.Equals(name))
+                            {
+                                account.totalShare += sellStock;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         public void WriteToStockJsonFile(string filepath)
         {
             var json = JsonConvert.SerializeObject(report);
