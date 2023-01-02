@@ -1,0 +1,17 @@
+[
+  {
+    "stockName": "BridgeLabz",
+    "stockPrice": 5,
+    "totalShare": 103
+  },
+  {
+    "stockName": "Dmart",
+    "stockPrice": 5,
+    "totalShare": 141
+  },
+  {
+    "stockName": "Lamborghini",
+    "stockPrice": 10,
+    "totalShare": 100
+  }
+]
